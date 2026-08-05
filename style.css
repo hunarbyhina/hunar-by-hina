@@ -1,5 +1,14 @@
+/* ==========================================
+   HUNAR BY HINA
+   Premium Boutique Website
+   Part 1 - Global • Header • Hero
+========================================== */
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
 /* ===========================
-   Hunar By Hina v2.0
+RESET
 =========================== */
 
 *{
@@ -14,14 +23,14 @@ html{
 
 body{
     font-family:'Poppins',sans-serif;
-    background:#faf7f2;
+    background:#faf8f4;
     color:#333;
     overflow-x:hidden;
 }
 
 img{
-    max-width:100%;
     display:block;
+    max-width:100%;
 }
 
 a{
@@ -33,22 +42,27 @@ ul{
 }
 
 section{
-    padding:90px 8%;
+    padding:100px 8%;
 }
 
-h1,h2,h3{
+h1,h2,h3,h4{
     font-family:'Playfair Display',serif;
 }
 
 h2{
-    font-size:42px;
-    margin-bottom:20px;
     text-align:center;
+    font-size:46px;
+    color:#2f2f2f;
+    margin-bottom:20px;
 }
 
-p{
-    line-height:1.8;
+.section-text{
+    max-width:750px;
+    margin:0 auto 50px;
+    text-align:center;
     color:#666;
+    font-size:17px;
+    line-height:1.8;
 }
 
 /* ===========================
@@ -66,10 +80,12 @@ header{
     justify-content:space-between;
     align-items:center;
 
-    padding:18px 8%;
+    padding:20px 8%;
 
-    background:rgba(255,255,255,.95);
-    backdrop-filter:blur(10px);
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(12px);
+
+    box-shadow:0 3px 15px rgba(0,0,0,.05);
 
     z-index:1000;
 
@@ -79,9 +95,10 @@ header{
 
 .logo{
 
-    font-size:30px;
+    font-size:32px;
     font-weight:700;
     color:#b88645;
+    letter-spacing:1px;
 
 }
 
@@ -113,7 +130,7 @@ nav a::after{
 
     position:absolute;
     left:0;
-    bottom:-6px;
+    bottom:-8px;
 
     width:0;
     height:2px;
@@ -138,55 +155,53 @@ HERO
 
     height:100vh;
 
-    background:url("hero.jpg") center/cover no-repeat;
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url("hero.jpg") center center/cover no-repeat;
 
     display:flex;
     justify-content:center;
     align-items:center;
 
-    position:relative;
-
-}
-
-.hero::before{
-
-    content:"";
-
-    position:absolute;
-    inset:0;
-
-    background:rgba(0,0,0,.45);
+    text-align:center;
 
 }
 
 .hero-content{
 
-    position:relative;
-    z-index:2;
-
+    max-width:850px;
     color:#fff;
-
-    text-align:center;
-
-    max-width:700px;
+    padding:20px;
 
 }
 
 .hero-content h1{
 
-    font-size:68px;
-
+    font-size:72px;
     margin-bottom:20px;
+    line-height:1.15;
 
 }
 
 .hero-content p{
 
-    color:#fff;
-
     font-size:20px;
+    color:#fff;
+    line-height:1.9;
+    margin-bottom:40px;
 
-    margin-bottom:35px;
+}
+
+/* ===========================
+HERO BUTTONS
+=========================== */
+
+.hero-buttons{
+
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
 
 }
 
@@ -194,27 +209,51 @@ HERO
 
     display:inline-block;
 
+    padding:16px 42px;
+
     background:#b88645;
 
     color:#fff;
 
-    padding:15px 40px;
-
-    border-radius:40px;
+    border-radius:50px;
 
     font-weight:600;
 
     transition:.35s;
 
+    box-shadow:0 10px 25px rgba(184,134,69,.35);
+
 }
 
 .btn:hover{
 
-    background:#94672d;
+    background:#9d7238;
 
-    transform:translateY(-4px);
+    transform:translateY(-5px);
 
 }
+
+.btn-outline{
+
+    background:transparent;
+
+    border:2px solid #fff;
+
+    color:#fff;
+
+    box-shadow:none;
+
+}
+
+.btn-outline:hover{
+
+    background:#fff;
+
+    color:#b88645;
+
+}/* ==========================================
+   PART 2 - ABOUT • PRODUCTS
+========================================== */
 
 /* ===========================
 ABOUT
@@ -222,17 +261,23 @@ ABOUT
 
 #about{
 
-    background:#fff;
+    background:#ffffff;
 
 }
 
 #about p{
 
-    max-width:850px;
+    max-width:900px;
 
-    margin:auto;
+    margin:20px auto;
 
     text-align:center;
+
+    color:#666;
+
+    font-size:17px;
+
+    line-height:1.9;
 
 }
 
@@ -240,29 +285,39 @@ ABOUT
 PRODUCTS
 =========================== */
 
+#products{
+
+    background:#faf8f4;
+
+}
+
 .cards{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
 
-    gap:30px;
+    gap:35px;
 
-    margin-top:50px;
+    margin-top:60px;
 
 }
+
+/* Product Card */
 
 .card{
 
     background:#fff;
 
-    border-radius:18px;
+    border-radius:24px;
 
     overflow:hidden;
 
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
 
-    transition:.4s;
+    transition:.4s ease;
+
+    position:relative;
 
 }
 
@@ -270,71 +325,890 @@ PRODUCTS
 
     transform:translateY(-12px);
 
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
+
 }
+
+/* Product Image */
 
 .card img{
 
-    height:280px;
-
     width:100%;
 
+    height:320px;
+
     object-fit:cover;
+
+    transition:.45s;
+
+}
+
+.card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+/* Card Content */
+
+.card-content{
+
+    padding:28px;
 
 }
 
 .card h3{
 
-    margin:20px;
+    font-size:28px;
+
+    color:#b88645;
+
+    margin-bottom:15px;
 
 }
 
 .card p{
 
-    margin:0 20px 25px;
+    color:#666;
+
+    line-height:1.8;
+
+    font-size:16px;
+
+}
+
+/* Decorative Gold Line */
+
+.card::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:30px;
+
+    bottom:0;
+
+    width:0;
+
+    height:4px;
+
+    background:#b88645;
+
+    transition:.4s;
+
+}
+
+.card:hover::after{
+
+    width:120px;
 
 }
 
 /* ===========================
-GALLERY
+SECTION DIVIDER
 =========================== */
 
-.gallery{
+.section-divider{
 
-    display:grid;
+    width:120px;
 
-    grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+    height:4px;
 
-    gap:18px;
+    background:#b88645;
 
-    margin-top:50px;
+    margin:25px auto 60px;
+
+    border-radius:20px;
 
 }
 
-.gallery img{
+/* ===========================
+GENERAL BUTTONS
+=========================== */
+
+.button{
+
+    display:inline-block;
+
+    background:#b88645;
+
+    color:#fff;
+
+    padding:14px 35px;
+
+    border-radius:40px;
+
+    transition:.35s;
+
+    font-weight:600;
+
+}
+
+.button:hover{
+
+    background:#9b723a;
+
+    transform:translateY(-4px);
+
+}
+
+/* ===========================
+SOFT BACKGROUND
+=========================== */
+
+.light-section{
+
+    background:#fffdf9;
+
+}/* ==========================================
+   PART 3 - BROWSE BY DESIGN
+========================================== */
+
+#gallery{
+
+    background:#fff;
+
+}
+
+.categories{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+
+    margin-top:60px;
+
+}
+
+.category-card{
+
+    position:relative;
+
+    height:360px;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+    transition:.4s;
+
+}
+
+.category-card img{
 
     width:100%;
 
-    height:260px;
+    height:100%;
 
     object-fit:cover;
 
-    border-radius:14px;
+    transition:.6s;
 
-    cursor:pointer;
+}
+
+/* Dark overlay */
+
+.category-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.82),
+        rgba(0,0,0,.18)
+    );
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    padding:35px;
+
+    transition:.4s;
+
+}
+
+.category-overlay h3{
+
+    color:#fff;
+
+    font-size:30px;
+
+    margin-bottom:12px;
+
+}
+
+.category-overlay p{
+
+    color:#f4f4f4;
+
+    font-size:16px;
+
+    margin-bottom:25px;
+
+    line-height:1.7;
+
+}
+
+/* Explore Button */
+
+.category-overlay::after{
+
+    content:"Explore Collection →";
+
+    display:inline-block;
+
+    width:max-content;
+
+    padding:12px 24px;
+
+    border:2px solid #fff;
+
+    border-radius:50px;
+
+    color:#fff;
+
+    font-weight:600;
 
     transition:.35s;
 
 }
 
-.gallery img:hover{
+/* Hover Effects */
 
-    transform:scale(1.03);
+.category-card:hover{
 
-    box-shadow:0 10px 25px rgba(0,0,0,.18);
+    transform:translateY(-12px);
 
-}/* ===========================
+    box-shadow:0 25px 55px rgba(0,0,0,.20);
+
+}
+
+.category-card:hover img{
+
+    transform:scale(1.12);
+
+}
+
+.category-card:hover .category-overlay{
+
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.90),
+        rgba(0,0,0,.25)
+    );
+
+}
+
+.category-card:hover .category-overlay::after{
+
+    background:#b88645;
+
+    border-color:#b88645;
+
+}
+
+/* Gold Shine */
+
+.category-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-120%;
+
+    left:-40%;
+
+    width:50%;
+
+    height:250%;
+
+    background:rgba(255,255,255,.15);
+
+    transform:rotate(25deg);
+
+    transition:.8s;
+
+    z-index:2;
+
+}
+
+.category-card:hover::before{
+
+    left:140%;
+
+}
+
+/* Section Titles */
+
+.product-section{
+
+    background:#faf8f4;
+
+}
+
+.product-section:nth-child(even){
+
+    background:#fff;
+
+}
+
+.product-section h2{
+
+    margin-bottom:15px;
+
+}
+
+.product-section .cards{
+
+    margin-top:50px;
+
+}
+/* ==========================================
+   PART 2 - ABOUT • PRODUCTS
+========================================== */
+
+/* ===========================
+ABOUT
+=========================== */
+
+#about{
+
+    background:#ffffff;
+
+}
+
+#about p{
+
+    max-width:900px;
+
+    margin:20px auto;
+
+    text-align:center;
+
+    color:#666;
+
+    font-size:17px;
+
+    line-height:1.9;
+
+}
+
+/* ===========================
+PRODUCTS
+=========================== */
+
+#products{
+
+    background:#faf8f4;
+
+}
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+
+    margin-top:60px;
+
+}
+
+/* Product Card */
+
+.card{
+
+    background:#fff;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    transition:.4s ease;
+
+    position:relative;
+
+}
+
+.card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
+
+}
+
+/* Product Image */
+
+.card img{
+
+    width:100%;
+
+    height:320px;
+
+    object-fit:cover;
+
+    transition:.45s;
+
+}
+
+.card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+/* Card Content */
+
+.card-content{
+
+    padding:28px;
+
+}
+
+.card h3{
+
+    font-size:28px;
+
+    color:#b88645;
+
+    margin-bottom:15px;
+
+}
+
+.card p{
+
+    color:#666;
+
+    line-height:1.8;
+
+    font-size:16px;
+
+}
+
+/* Decorative Gold Line */
+
+.card::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:30px;
+
+    bottom:0;
+
+    width:0;
+
+    height:4px;
+
+    background:#b88645;
+
+    transition:.4s;
+
+}
+
+.card:hover::after{
+
+    width:120px;
+
+}
+
+/* ===========================
+SECTION DIVIDER
+=========================== */
+
+.section-divider{
+
+    width:120px;
+
+    height:4px;
+
+    background:#b88645;
+
+    margin:25px auto 60px;
+
+    border-radius:20px;
+
+}
+
+/* ===========================
+GENERAL BUTTONS
+=========================== */
+
+.button{
+
+    display:inline-block;
+
+    background:#b88645;
+
+    color:#fff;
+
+    padding:14px 35px;
+
+    border-radius:40px;
+
+    transition:.35s;
+
+    font-weight:600;
+
+}
+
+.button:hover{
+
+    background:#9b723a;
+
+    transform:translateY(-4px);
+
+}
+
+/* ===========================
+SOFT BACKGROUND
+=========================== */
+
+.light-section{
+
+    background:#fffdf9;
+
+}/* ==========================================
+   PART 3 - BROWSE BY DESIGN
+========================================== */
+
+#gallery{
+
+    background:#fff;
+
+}
+
+.categories{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+
+    margin-top:60px;
+
+}
+
+.category-card{
+
+    position:relative;
+
+    height:360px;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+    transition:.4s;
+
+}
+
+.category-card img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.6s;
+
+}
+
+/* Dark overlay */
+
+.category-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.82),
+        rgba(0,0,0,.18)
+    );
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    padding:35px;
+
+    transition:.4s;
+
+}
+
+.category-overlay h3{
+
+    color:#fff;
+
+    font-size:30px;
+
+    margin-bottom:12px;
+
+}
+
+.category-overlay p{
+
+    color:#f4f4f4;
+
+    font-size:16px;
+
+    margin-bottom:25px;
+
+    line-height:1.7;
+
+}
+
+/* Explore Button */
+
+.category-overlay::after{
+
+    content:"Explore Collection →";
+
+    display:inline-block;
+
+    width:max-content;
+
+    padding:12px 24px;
+
+    border:2px solid #fff;
+
+    border-radius:50px;
+
+    color:#fff;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+/* Hover Effects */
+
+.category-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 25px 55px rgba(0,0,0,.20);
+
+}
+
+.category-card:hover img{
+
+    transform:scale(1.12);
+
+}
+
+.category-card:hover .category-overlay{
+
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.90),
+        rgba(0,0,0,.25)
+    );
+
+}
+
+.category-card:hover .category-overlay::after{
+
+    background:#b88645;
+
+    border-color:#b88645;
+
+}
+
+/* Gold Shine */
+
+.category-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-120%;
+
+    left:-40%;
+
+    width:50%;
+
+    height:250%;
+
+    background:rgba(255,255,255,.15);
+
+    transform:rotate(25deg);
+
+    transition:.8s;
+
+    z-index:2;
+
+}
+
+.category-card:hover::before{
+
+    left:140%;
+
+}
+
+/* Section Titles */
+
+.product-section{
+
+    background:#faf8f4;
+
+}
+
+.product-section:nth-child(even){
+
+    background:#fff;
+
+}
+
+.product-section h2{
+
+    margin-bottom:15px;
+
+}
+
+.product-section .cards{
+
+    margin-top:50px;
+
+}/* ==========================================
+   PART 4 - PRODUCT SECTIONS & CONTACT
+========================================== */
+
+/* ===========================
+PRODUCT CATEGORY SECTIONS
+=========================== */
+
+.product-section{
+
+    padding:100px 8%;
+
+}
+
+.product-section:nth-child(odd){
+
+    background:#ffffff;
+
+}
+
+.product-section:nth-child(even){
+
+    background:#faf8f4;
+
+}
+
+.product-section h2{
+
+    margin-bottom:15px;
+
+}
+
+.product-section .section-text{
+
+    margin-bottom:55px;
+
+}
+
+/* Product Grid */
+
+.product-section .cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:35px;
+
+}
+
+/* Individual Product */
+
+.product-section .card{
+
+    background:#fff;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.product-section .card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.15);
+
+}
+
+.product-section .card img{
+
+    width:100%;
+
+    height:300px;
+
+    object-fit:cover;
+
+    transition:.5s;
+
+}
+
+.product-section .card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.product-section .card h3{
+
+    text-align:center;
+
+    padding:22px;
+
+    font-size:22px;
+
+    color:#b88645;
+
+}
+
+/* ===========================
 CONTACT
 =========================== */
+
+#contact{
+
+    background:#ffffff;
+
+}
 
 .contact-box{
 
@@ -342,53 +1216,82 @@ CONTACT
 
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 
-    gap:25px;
+    gap:30px;
 
-    margin-top:50px;
+    margin-top:60px;
 
 }
 
-.contact-box div{
+.contact-card{
 
-    background:#fff;
+    background:#faf8f4;
 
-    padding:30px;
+    padding:40px 30px;
 
-    border-radius:18px;
+    border-radius:24px;
 
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    text-align:center;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
 
     transition:.35s;
 
 }
 
-.contact-box div:hover{
+.contact-card:hover{
 
-    transform:translateY(-8px);
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
 
 }
 
-.contact-box h3{
+.contact-card i{
 
-    margin-bottom:12px;
+    font-size:46px;
 
     color:#b88645;
 
+    margin-bottom:20px;
+
 }
 
-.contact-box a{
+.contact-card h3{
+
+    font-size:26px;
+
+    margin-bottom:15px;
+
+    color:#333;
+
+}
+
+.contact-card p{
+
+    color:#666;
+
+    margin-bottom:12px;
+
+}
+
+.contact-card a{
 
     color:#b88645;
 
     font-weight:600;
 
-}
-
-.contact-box a:hover{
-
-    text-decoration:underline;
+    transition:.3s;
 
 }
+
+.contact-card a:hover{
+
+    color:#8f642d;
+
+}/* ==========================================
+   PART 5 - FOOTER • WHATSAPP • ANIMATIONS
+   MOBILE RESPONSIVE
+========================================== */
 
 /* ===========================
 FOOTER
@@ -396,13 +1299,13 @@ FOOTER
 
 footer{
 
-    background:#222;
+    background:#1f1f1f;
 
     color:#fff;
 
     text-align:center;
 
-    padding:60px 8%;
+    padding:70px 8%;
 
 }
 
@@ -410,41 +1313,63 @@ footer h2{
 
     color:#fff;
 
+    font-size:40px;
+
     margin-bottom:15px;
 
 }
 
 footer p{
 
-    color:#ddd;
+    color:#d6d6d6;
+
+    margin:10px 0;
 
 }
 
+.copyright{
+
+    margin-top:35px;
+
+    font-size:15px;
+
+    opacity:.8;
+
+}
+
+/* ===========================
+SOCIAL ICONS
+=========================== */
+
 .social{
 
-    margin:25px 0;
+    display:flex;
+
+    justify-content:center;
+
+    gap:18px;
+
+    margin:35px 0;
 
 }
 
 .social a{
 
-    display:inline-flex;
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    background:#333;
+
+    display:flex;
 
     justify-content:center;
 
     align-items:center;
 
-    width:50px;
-
-    height:50px;
-
-    margin:0 8px;
-
-    background:#333;
-
     color:#fff;
-
-    border-radius:50%;
 
     font-size:22px;
 
@@ -456,123 +1381,7 @@ footer p{
 
     background:#b88645;
 
-    transform:translateY(-5px);
-
-}
-
-/* ===========================
-LIGHTBOX
-=========================== */
-
-.lightbox{
-
-    position:fixed;
-
-    inset:0;
-
-    background:rgba(0,0,0,.95);
-
-    display:none;
-
-    justify-content:center;
-
-    align-items:center;
-
-    flex-direction:column;
-
-    z-index:9999;
-
-    padding:20px;
-
-}
-
-.lightbox.active{
-
-    display:flex;
-
-}
-
-.lightbox img{
-
-    max-width:90%;
-
-    max-height:75vh;
-
-    border-radius:15px;
-
-    box-shadow:0 20px 50px rgba(0,0,0,.5);
-
-}
-
-.close{
-
-    position:absolute;
-
-    top:20px;
-
-    right:30px;
-
-    color:#fff;
-
-    font-size:55px;
-
-    cursor:pointer;
-
-    user-select:none;
-
-}
-
-.lightbox-controls{
-
-    margin-top:25px;
-
-    display:flex;
-
-    gap:15px;
-
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-}
-
-.lightbox button,
-.lightbox a{
-
-    background:#b88645;
-
-    color:#fff;
-
-    border:none;
-
-    padding:14px 28px;
-
-    border-radius:40px;
-
-    cursor:pointer;
-
-    text-decoration:none;
-
-    font-size:16px;
-
-    transition:.3s;
-
-}
-
-.lightbox button:hover,
-.lightbox a:hover{
-
-    background:#94672d;
-
-}
-
-.counter{
-
-    color:#fff;
-
-    margin-top:15px;
-
-    font-size:18px;
+    transform:translateY(-6px) scale(1.08);
 
 }
 
@@ -584,17 +1393,15 @@ FLOATING WHATSAPP
 
     position:fixed;
 
-    bottom:25px;
-
     right:25px;
+
+    bottom:25px;
 
     width:65px;
 
     height:65px;
 
     background:#25D366;
-
-    color:#fff;
 
     border-radius:50%;
 
@@ -604,13 +1411,15 @@ FLOATING WHATSAPP
 
     align-items:center;
 
+    color:#fff;
+
     font-size:34px;
 
-    box-shadow:0 10px 25px rgba(0,0,0,.25);
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
 
     z-index:999;
 
-    transition:.3s;
+    transition:.35s;
 
 }
 
@@ -632,9 +1441,9 @@ SCROLL TO TOP
 
     bottom:105px;
 
-    width:55px;
+    width:58px;
 
-    height:55px;
+    height:58px;
 
     border:none;
 
@@ -650,20 +1459,24 @@ SCROLL TO TOP
 
     display:none;
 
-    z-index:999;
+    box-shadow:0 12px 25px rgba(0,0,0,.25);
 
-    transition:.3s;
+    transition:.35s;
+
+    z-index:999;
 
 }
 
 #topBtn:hover{
 
-    background:#94672d;
+    background:#9d7238;
+
+    transform:translateY(-5px);
 
 }
 
 /* ===========================
-ANIMATIONS
+FADE ANIMATION
 =========================== */
 
 .fade{
@@ -672,7 +1485,7 @@ ANIMATIONS
 
     transform:translateY(40px);
 
-    transition:.8s;
+    transition:.8s ease;
 
 }
 
@@ -685,8 +1498,54 @@ ANIMATIONS
 }
 
 /* ===========================
-MOBILE
+CUSTOM SCROLLBAR
 =========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#f3f0ea;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#b88645;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#94672d;
+
+}
+
+/* ===========================
+MOBILE RESPONSIVE
+=========================== */
+
+@media(max-width:992px){
+
+    .hero-content h1{
+
+        font-size:54px;
+
+    }
+
+    section{
+
+        padding:80px 6%;
+
+    }
+
+}
 
 @media(max-width:768px){
 
@@ -718,7 +1577,7 @@ nav{
 
 nav a{
 
-    font-size:14px;
+    font-size:15px;
 
 }
 
@@ -740,6 +1599,22 @@ nav a{
 
 }
 
+.hero-buttons{
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+.btn{
+
+    width:240px;
+
+    text-align:center;
+
+}
+
 section{
 
     padding:70px 5%;
@@ -748,25 +1623,17 @@ section{
 
 h2{
 
-    font-size:32px;
+    font-size:34px;
 
 }
 
-.gallery{
+.cards{
 
     grid-template-columns:1fr;
 
 }
 
-.gallery img{
-
-    width:100%;
-
-    height:250px;
-
-}
-
-.cards{
+.categories{
 
     grid-template-columns:1fr;
 
@@ -778,28 +1645,21 @@ h2{
 
 }
 
-.lightbox img{
+.category-card{
 
-    max-width:95%;
-
-    max-height:60vh;
+    height:300px;
 
 }
 
-.lightbox button,
-.lightbox a{
+.product-section .card img{
 
-    width:90%;
-
-    text-align:center;
+    height:260px;
 
 }
 
-.close{
+.social{
 
-    font-size:45px;
-
-    right:20px;
+    flex-wrap:wrap;
 
 }
 
@@ -815,9 +1675,51 @@ h2{
 
 #topBtn{
 
-    width:50px;
+    width:52px;
 
-    height:50px;
+    height:52px;
+
+    bottom:95px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.hero-content h1{
+
+    font-size:34px;
+
+}
+
+.hero-content p{
+
+    font-size:15px;
+
+}
+
+h2{
+
+    font-size:30px;
+
+}
+
+.logo{
+
+    font-size:22px;
+
+}
+
+.section-text{
+
+    font-size:15px;
+
+}
+
+.category-overlay h3{
+
+    font-size:24px;
 
 }
 
