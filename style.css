@@ -1,269 +1,457 @@
 /* ==========================================
    HUNAR BY HINA
    Premium Boutique Website
-   Part 1 - Global • Header • Hero
+   CSS PART 1 - Global • Header • Hero
 ========================================== */
 
+
 /* Google Font */
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
 
 /* ===========================
 RESET
 =========================== */
 
+
 *{
+
     margin:0;
+
     padding:0;
+
     box-sizing:border-box;
+
 }
+
+
 
 html{
+
     scroll-behavior:smooth;
+
 }
+
+
 
 body{
+
     font-family:'Poppins',sans-serif;
+
     background:#faf8f4;
+
     color:#333;
+
     overflow-x:hidden;
+
 }
+
+
 
 img{
+
     display:block;
+
     max-width:100%;
+
 }
+
+
 
 a{
+
     text-decoration:none;
+
 }
+
+
 
 ul{
+
     list-style:none;
+
 }
+
+
 
 section{
+
     padding:100px 8%;
+
 }
+
+
 
 h1,h2,h3,h4{
+
     font-family:'Playfair Display',serif;
+
 }
+
+
 
 h2{
+
     text-align:center;
+
     font-size:46px;
+
     color:#2f2f2f;
+
     margin-bottom:20px;
+
 }
 
+
+
 .section-text{
+
     max-width:750px;
+
     margin:0 auto 50px;
+
     text-align:center;
+
     color:#666;
+
     font-size:17px;
+
     line-height:1.8;
+
 }
+
+
+
+
 
 /* ===========================
 HEADER
 =========================== */
 
+
 header{
 
+
     position:fixed;
+
     top:0;
+
     left:0;
+
     width:100%;
 
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
+
 
     padding:20px 8%;
 
+
     background:rgba(255,255,255,.92);
+
     backdrop-filter:blur(12px);
+
 
     box-shadow:0 3px 15px rgba(0,0,0,.05);
 
+
     z-index:1000;
+
 
     transition:.35s;
 
+
 }
+
+
 
 .logo{
 
+
     font-size:32px;
+
     font-weight:700;
+
     color:#b88645;
+
     letter-spacing:1px;
 
+
 }
+
+
 
 nav{
 
+
     display:flex;
+
     gap:35px;
 
+
 }
+
+
 
 nav a{
 
+
     color:#444;
+
     font-weight:500;
+
     position:relative;
+
     transition:.3s;
 
+
 }
+
+
 
 nav a:hover{
 
+
     color:#b88645;
 
+
 }
+
+
 
 nav a::after{
 
+
     content:"";
 
+
     position:absolute;
+
     left:0;
+
     bottom:-8px;
 
+
     width:0;
+
     height:2px;
+
 
     background:#b88645;
 
+
     transition:.35s;
 
+
 }
+
+
 
 nav a:hover::after{
 
+
     width:100%;
 
+
 }
+
+
+
+
 
 /* ===========================
 HERO
 =========================== */
 
+
 .hero{
+
 
     height:100vh;
 
+
     background:
+
     linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+
     url("hero.jpg") center center/cover no-repeat;
 
+
     display:flex;
+
     justify-content:center;
+
     align-items:center;
+
 
     text-align:center;
 
+
 }
+
+
 
 .hero-content{
 
+
     max-width:850px;
+
     color:#fff;
+
     padding:20px;
 
+
 }
+
+
 
 .hero-content h1{
 
+
     font-size:72px;
+
     margin-bottom:20px;
+
     line-height:1.15;
 
+
 }
+
+
 
 .hero-content p{
 
+
     font-size:20px;
+
     color:#fff;
+
     line-height:1.9;
+
     margin-bottom:40px;
 
+
 }
+
+
 
 /* ===========================
 HERO BUTTONS
 =========================== */
 
+
 .hero-buttons{
 
+
     display:flex;
+
     justify-content:center;
+
     gap:20px;
+
     flex-wrap:wrap;
 
+
 }
+
+
 
 .btn{
 
+
     display:inline-block;
+
 
     padding:16px 42px;
 
+
     background:#b88645;
+
 
     color:#fff;
 
+
     border-radius:50px;
+
 
     font-weight:600;
 
+
     transition:.35s;
+
 
     box-shadow:0 10px 25px rgba(184,134,69,.35);
 
+
 }
+
+
 
 .btn:hover{
 
+
     background:#9d7238;
+
 
     transform:translateY(-5px);
 
+
 }
+
+
 
 .btn-outline{
 
+
     background:transparent;
+
 
     border:2px solid #fff;
 
+
     color:#fff;
+
 
     box-shadow:none;
 
+
 }
+
+
 
 .btn-outline:hover{
 
+
     background:#fff;
+
 
     color:#b88645;
 
+
 }/* ==========================================
-   PART 2 - ABOUT • PRODUCTS
+   CSS PART 2 - ABOUT • PRODUCTS • GALLERY
 ========================================== */
+
+
 
 /* ===========================
 ABOUT
 =========================== */
+
 
 #about{
 
     background:#ffffff;
 
 }
+
+
 
 #about p{
 
@@ -281,15 +469,22 @@ ABOUT
 
 }
 
+
+
+
+
 /* ===========================
 PRODUCTS
 =========================== */
+
 
 #products{
 
     background:#faf8f4;
 
 }
+
+
 
 .cards{
 
@@ -303,912 +498,517 @@ PRODUCTS
 
 }
 
-/* Product Card */
+
+
+
 
 .card{
 
+
     background:#fff;
+
 
     border-radius:24px;
 
+
     overflow:hidden;
+
 
     box-shadow:0 15px 35px rgba(0,0,0,.08);
 
-    transition:.4s ease;
-
-    position:relative;
-
-}
-
-.card:hover{
-
-    transform:translateY(-12px);
-
-    box-shadow:0 20px 45px rgba(0,0,0,.15);
-
-}
-
-/* Product Image */
-
-.card img{
-
-    width:100%;
-
-    height:320px;
-
-    object-fit:cover;
-
-    transition:.45s;
-
-}
-
-.card:hover img{
-
-    transform:scale(1.08);
-
-}
-
-/* Card Content */
-
-.card-content{
-
-    padding:28px;
-
-}
-
-.card h3{
-
-    font-size:28px;
-
-    color:#b88645;
-
-    margin-bottom:15px;
-
-}
-
-.card p{
-
-    color:#666;
-
-    line-height:1.8;
-
-    font-size:16px;
-
-}
-
-/* Decorative Gold Line */
-
-.card::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:30px;
-
-    bottom:0;
-
-    width:0;
-
-    height:4px;
-
-    background:#b88645;
-
-    transition:.4s;
-
-}
-
-.card:hover::after{
-
-    width:120px;
-
-}
-
-/* ===========================
-SECTION DIVIDER
-=========================== */
-
-.section-divider{
-
-    width:120px;
-
-    height:4px;
-
-    background:#b88645;
-
-    margin:25px auto 60px;
-
-    border-radius:20px;
-
-}
-
-/* ===========================
-GENERAL BUTTONS
-=========================== */
-
-.button{
-
-    display:inline-block;
-
-    background:#b88645;
-
-    color:#fff;
-
-    padding:14px 35px;
-
-    border-radius:40px;
-
-    transition:.35s;
-
-    font-weight:600;
-
-}
-
-.button:hover{
-
-    background:#9b723a;
-
-    transform:translateY(-4px);
-
-}
-
-/* ===========================
-SOFT BACKGROUND
-=========================== */
-
-.light-section{
-
-    background:#fffdf9;
-
-}/* ==========================================
-   PART 3 - BROWSE BY DESIGN
-========================================== */
-
-#gallery{
-
-    background:#fff;
-
-}
-
-.categories{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-
-    gap:35px;
-
-    margin-top:60px;
-
-}
-
-.category-card{
-
-    position:relative;
-
-    height:360px;
-
-    overflow:hidden;
-
-    border-radius:24px;
-
-    box-shadow:0 15px 35px rgba(0,0,0,.12);
-
-    transition:.4s;
-
-}
-
-.category-card img{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-    transition:.6s;
-
-}
-
-/* Dark overlay */
-
-.category-overlay{
-
-    position:absolute;
-
-    inset:0;
-
-    background:linear-gradient(
-        to top,
-        rgba(0,0,0,.82),
-        rgba(0,0,0,.18)
-    );
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:flex-end;
-
-    padding:35px;
-
-    transition:.4s;
-
-}
-
-.category-overlay h3{
-
-    color:#fff;
-
-    font-size:30px;
-
-    margin-bottom:12px;
-
-}
-
-.category-overlay p{
-
-    color:#f4f4f4;
-
-    font-size:16px;
-
-    margin-bottom:25px;
-
-    line-height:1.7;
-
-}
-
-/* Explore Button */
-
-.category-overlay::after{
-
-    content:"Explore Collection →";
-
-    display:inline-block;
-
-    width:max-content;
-
-    padding:12px 24px;
-
-    border:2px solid #fff;
-
-    border-radius:50px;
-
-    color:#fff;
-
-    font-weight:600;
-
-    transition:.35s;
-
-}
-
-/* Hover Effects */
-
-.category-card:hover{
-
-    transform:translateY(-12px);
-
-    box-shadow:0 25px 55px rgba(0,0,0,.20);
-
-}
-
-.category-card:hover img{
-
-    transform:scale(1.12);
-
-}
-
-.category-card:hover .category-overlay{
-
-    background:linear-gradient(
-        to top,
-        rgba(0,0,0,.90),
-        rgba(0,0,0,.25)
-    );
-
-}
-
-.category-card:hover .category-overlay::after{
-
-    background:#b88645;
-
-    border-color:#b88645;
-
-}
-
-/* Gold Shine */
-
-.category-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:-120%;
-
-    left:-40%;
-
-    width:50%;
-
-    height:250%;
-
-    background:rgba(255,255,255,.15);
-
-    transform:rotate(25deg);
-
-    transition:.8s;
-
-    z-index:2;
-
-}
-
-.category-card:hover::before{
-
-    left:140%;
-
-}
-
-/* Section Titles */
-
-.product-section{
-
-    background:#faf8f4;
-
-}
-
-.product-section:nth-child(even){
-
-    background:#fff;
-
-}
-
-.product-section h2{
-
-    margin-bottom:15px;
-
-}
-
-.product-section .cards{
-
-    margin-top:50px;
-
-}
-/* ==========================================
-   PART 2 - ABOUT • PRODUCTS
-========================================== */
-
-/* ===========================
-ABOUT
-=========================== */
-
-#about{
-
-    background:#ffffff;
-
-}
-
-#about p{
-
-    max-width:900px;
-
-    margin:20px auto;
-
-    text-align:center;
-
-    color:#666;
-
-    font-size:17px;
-
-    line-height:1.9;
-
-}
-
-/* ===========================
-PRODUCTS
-=========================== */
-
-#products{
-
-    background:#faf8f4;
-
-}
-
-.cards{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-
-    gap:35px;
-
-    margin-top:60px;
-
-}
-
-/* Product Card */
-
-.card{
-
-    background:#fff;
-
-    border-radius:24px;
-
-    overflow:hidden;
-
-    box-shadow:0 15px 35px rgba(0,0,0,.08);
 
     transition:.4s ease;
 
+
     position:relative;
 
+
 }
+
+
 
 .card:hover{
 
+
     transform:translateY(-12px);
+
 
     box-shadow:0 20px 45px rgba(0,0,0,.15);
 
+
 }
 
-/* Product Image */
+
+
 
 .card img{
 
+
     width:100%;
+
 
     height:320px;
 
+
     object-fit:cover;
+
 
     transition:.45s;
 
+
 }
+
+
 
 .card:hover img{
 
+
     transform:scale(1.08);
+
 
 }
 
-/* Card Content */
+
+
 
 .card-content{
 
+
     padding:28px;
 
+
 }
+
+
+
 
 .card h3{
 
+
     font-size:28px;
+
 
     color:#b88645;
 
+
     margin-bottom:15px;
 
+
 }
+
+
+
 
 .card p{
 
+
     color:#666;
+
 
     line-height:1.8;
 
+
     font-size:16px;
+
 
 }
 
-/* Decorative Gold Line */
+
+
+
 
 .card::after{
 
+
     content:"";
 
+
     position:absolute;
+
 
     left:30px;
 
+
     bottom:0;
+
 
     width:0;
 
+
     height:4px;
+
 
     background:#b88645;
 
+
     transition:.4s;
 
+
 }
+
+
 
 .card:hover::after{
 
-    width:120px;
-
-}
-
-/* ===========================
-SECTION DIVIDER
-=========================== */
-
-.section-divider{
 
     width:120px;
 
-    height:4px;
-
-    background:#b88645;
-
-    margin:25px auto 60px;
-
-    border-radius:20px;
 
 }
+
+
+
+
+
+
 
 /* ===========================
-GENERAL BUTTONS
+BROWSE BY DESIGN
 =========================== */
 
-.button{
-
-    display:inline-block;
-
-    background:#b88645;
-
-    color:#fff;
-
-    padding:14px 35px;
-
-    border-radius:40px;
-
-    transition:.35s;
-
-    font-weight:600;
-
-}
-
-.button:hover{
-
-    background:#9b723a;
-
-    transform:translateY(-4px);
-
-}
-
-/* ===========================
-SOFT BACKGROUND
-=========================== */
-
-.light-section{
-
-    background:#fffdf9;
-
-}/* ==========================================
-   PART 3 - BROWSE BY DESIGN
-========================================== */
 
 #gallery{
 
+
     background:#fff;
 
+
 }
+
+
 
 .categories{
 
+
     display:grid;
+
 
     grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
 
+
     gap:35px;
+
 
     margin-top:60px;
 
+
 }
+
+
+
 
 .category-card{
 
+
     position:relative;
+
 
     height:360px;
 
+
     overflow:hidden;
+
 
     border-radius:24px;
 
+
     box-shadow:0 15px 35px rgba(0,0,0,.12);
+
 
     transition:.4s;
 
+
 }
+
+
+
 
 .category-card img{
 
+
     width:100%;
+
 
     height:100%;
 
+
     object-fit:cover;
+
 
     transition:.6s;
 
+
 }
 
-/* Dark overlay */
+
+
+
 
 .category-overlay{
 
+
     position:absolute;
+
 
     inset:0;
 
+
     background:linear-gradient(
+
         to top,
+
         rgba(0,0,0,.82),
+
         rgba(0,0,0,.18)
+
     );
+
 
     display:flex;
 
+
     flex-direction:column;
+
 
     justify-content:flex-end;
 
+
     padding:35px;
+
 
     transition:.4s;
 
+
 }
+
+
+
 
 .category-overlay h3{
 
+
     color:#fff;
+
 
     font-size:30px;
 
+
     margin-bottom:12px;
 
+
 }
+
+
+
 
 .category-overlay p{
 
+
     color:#f4f4f4;
+
 
     font-size:16px;
 
+
     margin-bottom:25px;
+
 
     line-height:1.7;
 
+
 }
 
-/* Explore Button */
+
+
 
 .category-overlay::after{
 
+
     content:"Explore Collection →";
+
 
     display:inline-block;
 
+
     width:max-content;
+
 
     padding:12px 24px;
 
+
     border:2px solid #fff;
+
 
     border-radius:50px;
 
+
     color:#fff;
+
 
     font-weight:600;
 
+
     transition:.35s;
+
 
 }
 
-/* Hover Effects */
+
+
+
 
 .category-card:hover{
 
+
     transform:translateY(-12px);
+
 
     box-shadow:0 25px 55px rgba(0,0,0,.20);
 
+
 }
+
+
 
 .category-card:hover img{
 
+
     transform:scale(1.12);
 
+
 }
+
+
 
 .category-card:hover .category-overlay{
 
+
     background:linear-gradient(
+
         to top,
+
         rgba(0,0,0,.90),
+
         rgba(0,0,0,.25)
+
     );
 
+
 }
+
+
 
 .category-card:hover .category-overlay::after{
 
+
     background:#b88645;
+
 
     border-color:#b88645;
 
-}
-
-/* Gold Shine */
-
-.category-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:-120%;
-
-    left:-40%;
-
-    width:50%;
-
-    height:250%;
-
-    background:rgba(255,255,255,.15);
-
-    transform:rotate(25deg);
-
-    transition:.8s;
-
-    z-index:2;
 
 }
 
-.category-card:hover::before{
 
-    left:140%;
 
-}
 
-/* Section Titles */
-
-.product-section{
-
-    background:#faf8f4;
-
-}
-
-.product-section:nth-child(even){
-
-    background:#fff;
-
-}
-
-.product-section h2{
-
-    margin-bottom:15px;
-
-}
-
-.product-section .cards{
-
-    margin-top:50px;
-
-}/* ==========================================
-   PART 4 - PRODUCT SECTIONS & CONTACT
-========================================== */
 
 /* ===========================
-PRODUCT CATEGORY SECTIONS
+PRODUCT SECTIONS
 =========================== */
 
+
 .product-section{
+
 
     padding:100px 8%;
 
+
 }
+
+
 
 .product-section:nth-child(odd){
 
+
     background:#ffffff;
 
+
 }
+
+
 
 .product-section:nth-child(even){
 
+
     background:#faf8f4;
 
-}
-
-.product-section h2{
-
-    margin-bottom:15px;
 
 }
 
-.product-section .section-text{
 
-    margin-bottom:55px;
 
-}
-
-/* Product Grid */
 
 .product-section .cards{
 
+
     display:grid;
+
 
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 
+
     gap:35px;
 
-}
-
-/* Individual Product */
-
-.product-section .card{
-
-    background:#fff;
-
-    border-radius:22px;
-
-    overflow:hidden;
-
-    box-shadow:0 12px 30px rgba(0,0,0,.08);
-
-    transition:.35s;
 
 }
 
-.product-section .card:hover{
 
-    transform:translateY(-10px);
 
-    box-shadow:0 18px 40px rgba(0,0,0,.15);
-
-}
 
 .product-section .card img{
 
+
     width:100%;
+
 
     height:300px;
 
+
     object-fit:cover;
+
 
     transition:.5s;
 
+
 }
+
+
 
 .product-section .card:hover img{
 
+
     transform:scale(1.08);
 
-}
 
-.product-section .card h3{
+}/* ==========================================
+   CSS PART 3 - CONTACT • FOOTER • MOBILE
+   IMAGE VIEWER
+========================================== */
 
-    text-align:center;
-
-    padding:22px;
-
-    font-size:22px;
-
-    color:#b88645;
-
-}
 
 /* ===========================
 CONTACT
 =========================== */
+
 
 #contact{
 
     background:#ffffff;
 
 }
+
+
 
 .contact-box{
 
@@ -1220,507 +1020,703 @@ CONTACT
 
     margin-top:60px;
 
+
 }
+
+
 
 .contact-card{
 
+
     background:#faf8f4;
+
 
     padding:40px 30px;
 
+
     border-radius:24px;
+
 
     text-align:center;
 
+
     box-shadow:0 12px 30px rgba(0,0,0,.08);
+
 
     transition:.35s;
 
+
 }
+
+
 
 .contact-card:hover{
 
+
     transform:translateY(-10px);
+
 
     box-shadow:0 20px 45px rgba(0,0,0,.15);
 
+
 }
+
+
 
 .contact-card i{
 
+
     font-size:46px;
 
+
     color:#b88645;
+
 
     margin-bottom:20px;
 
+
 }
+
+
 
 .contact-card h3{
 
+
     font-size:26px;
+
 
     margin-bottom:15px;
 
+
     color:#333;
 
+
 }
+
+
 
 .contact-card p{
 
+
     color:#666;
 
-    margin-bottom:12px;
 
 }
+
+
 
 .contact-card a{
 
+
     color:#b88645;
+
 
     font-weight:600;
 
-    transition:.3s;
 
 }
 
-.contact-card a:hover{
 
-    color:#8f642d;
 
-}/* ==========================================
-   PART 5 - FOOTER • WHATSAPP • ANIMATIONS
-   MOBILE RESPONSIVE
-========================================== */
+
 
 /* ===========================
 FOOTER
 =========================== */
 
+
 footer{
+
 
     background:#1f1f1f;
 
+
     color:#fff;
+
 
     text-align:center;
 
+
     padding:70px 8%;
 
+
 }
+
+
 
 footer h2{
 
+
     color:#fff;
+
 
     font-size:40px;
 
-    margin-bottom:15px;
 
 }
+
+
 
 footer p{
 
+
     color:#d6d6d6;
 
-    margin:10px 0;
 
 }
 
-.copyright{
 
-    margin-top:35px;
 
-    font-size:15px;
 
-    opacity:.8;
-
-}
-
-/* ===========================
-SOCIAL ICONS
-=========================== */
 
 .social{
 
+
     display:flex;
 
+
     justify-content:center;
+
 
     gap:18px;
 
+
     margin:35px 0;
 
+
 }
+
+
 
 .social a{
 
+
     width:55px;
+
 
     height:55px;
 
+
     border-radius:50%;
+
 
     background:#333;
 
+
     display:flex;
+
 
     justify-content:center;
 
+
     align-items:center;
+
 
     color:#fff;
 
+
     font-size:22px;
+
 
     transition:.35s;
 
+
 }
+
+
 
 .social a:hover{
 
+
     background:#b88645;
 
-    transform:translateY(-6px) scale(1.08);
+
+    transform:translateY(-6px);
+
 
 }
 
+
+
+
+
 /* ===========================
-FLOATING WHATSAPP
+WHATSAPP
 =========================== */
+
 
 .whatsapp{
 
+
     position:fixed;
 
+
     right:25px;
+
 
     bottom:25px;
 
+
     width:65px;
+
 
     height:65px;
 
+
     background:#25D366;
 
+
     border-radius:50%;
+
 
     display:flex;
 
+
     justify-content:center;
+
 
     align-items:center;
 
+
     color:#fff;
+
 
     font-size:34px;
 
-    box-shadow:0 15px 35px rgba(0,0,0,.25);
 
     z-index:999;
 
-    transition:.35s;
 
 }
 
-.whatsapp:hover{
 
-    transform:scale(1.1);
 
-}
+
+
 
 /* ===========================
-SCROLL TO TOP
+SCROLL BUTTON
 =========================== */
+
 
 #topBtn{
 
+
     position:fixed;
+
 
     right:25px;
 
+
     bottom:105px;
+
 
     width:58px;
 
+
     height:58px;
+
 
     border:none;
 
+
     border-radius:50%;
 
+
     background:#b88645;
+
 
     color:#fff;
 
-    font-size:22px;
 
     cursor:pointer;
 
+
     display:none;
 
-    box-shadow:0 12px 25px rgba(0,0,0,.25);
-
-    transition:.35s;
 
     z-index:999;
 
-}
-
-#topBtn:hover{
-
-    background:#9d7238;
-
-    transform:translateY(-5px);
 
 }
+
+
+
+
 
 /* ===========================
-FADE ANIMATION
+IMAGE VIEWER
 =========================== */
 
-.fade{
 
-    opacity:0;
+#imageViewer{
 
-    transform:translateY(40px);
 
-    transition:.8s ease;
+    display:none;
+
+
+    position:fixed;
+
+
+    top:0;
+
+
+    left:0;
+
+
+    width:100%;
+
+
+    height:100%;
+
+
+    background:rgba(0,0,0,.9);
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    flex-direction:column;
+
+
+    z-index:9999;
+
+
+    padding:20px;
+
 
 }
 
-.fade.show{
 
-    opacity:1;
 
-    transform:translateY(0);
+#largeImage{
 
-}
 
-/* ===========================
-CUSTOM SCROLLBAR
-=========================== */
+    max-width:90%;
 
-::-webkit-scrollbar{
 
-    width:10px;
+    max-height:80%;
 
-}
 
-::-webkit-scrollbar-track{
+    object-fit:contain;
 
-    background:#f3f0ea;
+
+    border-radius:15px;
+
+
+    box-shadow:0 20px 50px rgba(0,0,0,.5);
+
 
 }
 
-::-webkit-scrollbar-thumb{
+
+
+#closeImage{
+
+
+    position:absolute;
+
+
+    top:20px;
+
+
+    right:35px;
+
+
+    color:white;
+
+
+    font-size:55px;
+
+
+    cursor:pointer;
+
+
+}
+
+
+
+#closeImage:hover{
+
+
+    color:#b88645;
+
+
+}
+
+
+
+
+#downloadImage{
+
+
+    margin-top:30px;
+
+
+    padding:14px 35px;
+
 
     background:#b88645;
 
-    border-radius:20px;
+
+    color:white;
+
+
+    border-radius:50px;
+
+
+    font-weight:600;
+
+
+    font-size:17px;
+
+
+    transition:.3s;
+
 
 }
 
-::-webkit-scrollbar-thumb:hover{
 
-    background:#94672d;
+
+#downloadImage:hover{
+
+
+    background:#9d7238;
+
+
+    transform:translateY(-5px);
+
 
 }
+
+
+
+
+
+/* Make design images clickable */
+
+
+.product-section .card img{
+
+
+    cursor:pointer;
+
+
+}
+
+
+
+
+
 
 /* ===========================
 MOBILE RESPONSIVE
 =========================== */
 
-@media(max-width:992px){
-
-    .hero-content h1{
-
-        font-size:54px;
-
-    }
-
-    section{
-
-        padding:80px 6%;
-
-    }
-
-}
 
 @media(max-width:768px){
 
+
 header{
 
+
     flex-direction:column;
+
 
     padding:15px 5%;
 
+
 }
+
+
 
 .logo{
 
+
     font-size:24px;
 
-    margin-bottom:12px;
 
 }
+
+
 
 nav{
 
+
     flex-wrap:wrap;
+
 
     justify-content:center;
 
+
     gap:18px;
 
-}
-
-nav a{
-
-    font-size:15px;
 
 }
 
-.hero{
 
-    height:85vh;
-
-}
 
 .hero-content h1{
+
 
     font-size:42px;
 
+
 }
 
+
+
 .hero-content p{
+
 
     font-size:16px;
 
-}
-
-.hero-buttons{
-
-    flex-direction:column;
-
-    align-items:center;
 
 }
 
-.btn{
 
-    width:240px;
-
-    text-align:center;
-
-}
 
 section{
 
+
     padding:70px 5%;
 
+
 }
+
+
 
 h2{
 
+
     font-size:34px;
 
+
 }
+
+
 
 .cards{
 
+
     grid-template-columns:1fr;
 
+
 }
+
+
 
 .categories{
 
+
     grid-template-columns:1fr;
 
+
 }
+
+
 
 .contact-box{
 
+
     grid-template-columns:1fr;
 
+
 }
+
+
 
 .category-card{
 
+
     height:300px;
 
+
 }
+
+
 
 .product-section .card img{
 
+
     height:260px;
 
-}
-
-.social{
-
-    flex-wrap:wrap;
 
 }
 
-.whatsapp{
-
-    width:58px;
-
-    height:58px;
-
-    font-size:30px;
 
 }
 
-#topBtn{
 
-    width:52px;
 
-    height:52px;
 
-    bottom:95px;
-
-}
-
-}
 
 @media(max-width:480px){
 
+
 .hero-content h1{
+
 
     font-size:34px;
 
+
 }
+
+
 
 .hero-content p{
 
+
     font-size:15px;
 
+
 }
+
+
 
 h2{
 
+
     font-size:30px;
 
+
 }
+
+
 
 .logo{
 
+
     font-size:22px;
 
+
 }
+
+
 
 .section-text{
 
+
     font-size:15px;
 
-}
-
-.category-overlay h3{
-
-    font-size:24px;
 
 }
+
+
+
+#largeImage{
+
+
+    max-width:95%;
+
+
+    max-height:70%;
+
+
+}
+
 
 }
