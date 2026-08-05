@@ -140,3 +140,56 @@ if(whatsapp){
     },3500);
 
 }
+// ==============================
+// Image Viewer + Download
+// ==============================
+
+
+function openImage(src){
+
+    const viewer = document.getElementById("imageViewer");
+
+    const image = document.getElementById("largeImage");
+
+    const download = document.getElementById("downloadImage");
+
+
+    viewer.style.display="flex";
+
+
+    image.src = src;
+
+
+    download.href = src;
+
+
+    // Set download file name
+
+    let fileName = src.split("/").pop();
+
+    download.download = fileName;
+
+
+}
+
+
+
+function closeImage(){
+
+    document.getElementById("imageViewer").style.display="none";
+
+}
+
+
+
+// Close image viewer when clicking outside image
+
+document.getElementById("imageViewer")?.addEventListener("click",function(e){
+
+    if(e.target.id==="imageViewer"){
+
+        closeImage();
+
+    }
+
+});
