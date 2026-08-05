@@ -1,5 +1,5 @@
 // ==============================
-// Hunar By Hina v2.0
+// Hunar By Hina v3.0
 // ==============================
 
 // Smooth Scrolling
@@ -23,15 +23,17 @@ document.querySelectorAll("nav a").forEach(link => {
 
 });
 
-// Header Shadow
+// ==============================
+// Sticky Header
+// ==============================
 
 const header = document.querySelector("header");
 
 window.addEventListener("scroll",()=>{
 
-    if(window.scrollY>60){
+    if(window.scrollY > 60){
 
-        header.style.boxShadow="0 10px 25px rgba(0,0,0,.15)";
+        header.style.boxShadow="0 10px 30px rgba(0,0,0,.12)";
         header.style.background="rgba(255,255,255,.97)";
 
     }else{
@@ -43,7 +45,9 @@ window.addEventListener("scroll",()=>{
 
 });
 
+// ==============================
 // Fade Animation
+// ==============================
 
 const observer = new IntersectionObserver(entries=>{
 
@@ -58,11 +62,12 @@ const observer = new IntersectionObserver(entries=>{
     });
 
 },{
-    threshold:.15
+    threshold:0.15
 });
 
-document.querySelectorAll(".card,.gallery img,.contact-box div")
-.forEach(el=>{
+document.querySelectorAll(
+".card,.category-card,.contact-card,h2,p"
+).forEach(el=>{
 
     el.classList.add("fade");
 
@@ -71,200 +76,26 @@ document.querySelectorAll(".card,.gallery img,.contact-box div")
 });
 
 // ==============================
-// LIGHTBOX
-// ==============================
-
-const images = document.querySelectorAll(".gallery img");
-
-let currentIndex = 0;
-
-const lightbox = document.createElement("div");
-lightbox.className="lightbox";
-
-lightbox.innerHTML=`
-
-<span class="close">&times;</span>
-
-<img src="" alt="">
-
-<div class="counter"></div>
-
-<div class="lightbox-controls">
-
-<button id="prevBtn">⟨ Previous</button>
-
-<a id="downloadBtn" download>⬇ Download</a>
-
-<button id="nextBtn">Next ⟩</button>
-
-</div>
-
-`;
-
-document.body.appendChild(lightbox);
-
-const lightboxImg = lightbox.querySelector("img");
-
-const counter = lightbox.querySelector(".counter");
-
-const closeBtn = lightbox.querySelector(".close");
-
-const downloadBtn = document.getElementById("downloadBtn");
-
-function showImage(index){
-
-    currentIndex=index;
-
-    lightbox.classList.add("active");
-
-    lightboxImg.src=images[index].src;
-
-    downloadBtn.href=images[index].src;
-
-    counter.innerHTML=(index+1)+" / "+images.length;
-
-}
-
-images.forEach((img,index)=>{
-
-    img.addEventListener("click",()=>{
-
-        showImage(index);
-
-    });
-
-});
-
-closeBtn.onclick=()=>{
-
-    lightbox.classList.remove("active");
-
-};
-
-lightbox.onclick=(e)=>{
-
-    if(e.target===lightbox){
-
-        lightbox.classList.remove("active");
-
-    }
-
-};
-// ==============================
-// Previous / Next Buttons
-// ==============================
-
-document.getElementById("prevBtn").onclick = () => {
-
-    currentIndex--;
-
-    if(currentIndex < 0){
-
-        currentIndex = images.length - 1;
-
-    }
-
-    showImage(currentIndex);
-
-};
-
-document.getElementById("nextBtn").onclick = () => {
-
-    currentIndex++;
-
-    if(currentIndex >= images.length){
-
-        currentIndex = 0;
-
-    }
-
-    showImage(currentIndex);
-
-};
-
-// ==============================
-// Keyboard Controls
-// ==============================
-
-document.addEventListener("keydown",(e)=>{
-
-    if(!lightbox.classList.contains("active")) return;
-
-    if(e.key==="ArrowLeft"){
-
-        document.getElementById("prevBtn").click();
-
-    }
-
-    if(e.key==="ArrowRight"){
-
-        document.getElementById("nextBtn").click();
-
-    }
-
-    if(e.key==="Escape"){
-
-        lightbox.classList.remove("active");
-
-    }
-
-});
-
-// ==============================
-// Swipe Support
-// ==============================
-
-let startX = 0;
-
-lightbox.addEventListener("touchstart",(e)=>{
-
-    startX = e.changedTouches[0].screenX;
-
-});
-
-lightbox.addEventListener("touchend",(e)=>{
-
-    let endX = e.changedTouches[0].screenX;
-
-    let distance = endX - startX;
-
-    if(Math.abs(distance) > 70){
-
-        if(distance > 0){
-
-            document.getElementById("prevBtn").click();
-
-        }else{
-
-            document.getElementById("nextBtn").click();
-
-        }
-
-    }
-
-});
-
-// ==============================
-// Scroll To Top Button
+// Scroll To Top
 // ==============================
 
 const topBtn = document.getElementById("topBtn");
 
 window.addEventListener("scroll",()=>{
 
-    if(window.scrollY > 500){
+    if(window.scrollY>500){
 
-        topBtn.style.display = "flex";
+        topBtn.style.display="flex";
 
     }else{
 
-        topBtn.style.display = "none";
+        topBtn.style.display="none";
 
     }
 
 });
 
-topBtn.onclick = ()=>{
+topBtn.onclick=()=>{
 
     window.scrollTo({
 
@@ -280,32 +111,32 @@ topBtn.onclick = ()=>{
 // Footer Year
 // ==============================
 
-const footerYear = document.querySelector("footer .year");
+const year=document.querySelector(".year");
 
-if(footerYear){
+if(year){
 
-    footerYear.textContent = new Date().getFullYear();
+    year.textContent=new Date().getFullYear();
 
 }
 
 // ==============================
-// Floating WhatsApp Animation
+// WhatsApp Floating Animation
 // ==============================
 
-const whatsapp = document.querySelector(".whatsapp");
+const whatsapp=document.querySelector(".whatsapp");
 
 if(whatsapp){
 
     setInterval(()=>{
 
-        whatsapp.style.transform = "scale(1.1)";
+        whatsapp.animate([
+            {transform:"scale(1)"},
+            {transform:"scale(1.12)"},
+            {transform:"scale(1)"}
+        ],{
+            duration:600
+        });
 
-        setTimeout(()=>{
-
-            whatsapp.style.transform = "scale(1)";
-
-        },300);
-
-    },3000);
+    },3500);
 
 }
