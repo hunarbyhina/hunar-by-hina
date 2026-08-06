@@ -1300,46 +1300,41 @@ SCROLL BUTTON
 
 
 #topBtn{
+    position: fixed;
+    right: 25px;
+    bottom: 105px;
 
+    width: 58px;
+    height: 58px;
 
-    position:fixed;
+    border: none;
+    border-radius: 50%;
 
+    background: #b88645;
+    color: white;
 
-    right:25px;
+    font-size: 30px;
+    font-weight: bold;
 
+    display: none;
 
-    bottom:105px;
+    justify-content: center;
+    align-items: center;
 
+    cursor: pointer;
 
-    width:58px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.25);
 
+    transition: all .3s ease;
 
-    height:58px;
-
-
-    border:none;
-
-
-    border-radius:50%;
-
-
-    background:#b88645;
-
-
-    color:#fff;
-
-
-    cursor:pointer;
-
-
-    display:none;
-
-
-    z-index:999;
-
-
+    z-index: 999;
 }
 
+#topBtn:hover{
+    background:#9d7238;
+    transform:translateY(-6px) scale(1.08);
+    box-shadow:0 12px 28px rgba(0,0,0,.35);
+}
 
 
 
