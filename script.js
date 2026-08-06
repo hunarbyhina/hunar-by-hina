@@ -1,5 +1,5 @@
 // ==============================
-// Hunar By Hina v4.0
+// Hunar By Hina v6.0
 // ==============================
 
 // ==============================
@@ -12,13 +12,27 @@ const navbar = document.getElementById("navbar");
 if (menuToggle && navbar) {
 
     menuToggle.addEventListener("click", () => {
+
         navbar.classList.toggle("active");
+
+        const icon = menuToggle.querySelector("i");
+
+        icon.classList.toggle("fa-bars");
+        icon.classList.toggle("fa-xmark");
+
     });
 
     document.querySelectorAll("#navbar a").forEach(link => {
 
         link.addEventListener("click", () => {
+
             navbar.classList.remove("active");
+
+            const icon = menuToggle.querySelector("i");
+
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+
         });
 
     });
@@ -26,7 +40,7 @@ if (menuToggle && navbar) {
 }
 
 // ==============================
-// Smooth Scrolling
+// SMOOTH SCROLL
 // ==============================
 
 document.querySelectorAll("#navbar a").forEach(link => {
@@ -50,29 +64,45 @@ document.querySelectorAll("#navbar a").forEach(link => {
 });
 
 // ==============================
-// Sticky Header
+// HEADER
 // ==============================
 
 const header = document.querySelector("header");
 
-window.addEventListener("scroll",()=>{
+let lastScroll = 0;
 
-    if(window.scrollY > 60){
+window.addEventListener("scroll", () => {
 
-        header.style.boxShadow="0 10px 30px rgba(0,0,0,.12)";
-        header.style.background="rgba(255,255,255,.97)";
+    const currentScroll = window.pageYOffset;
+
+    if(currentScroll > 60){
+
+        header.style.boxShadow = "0 10px 30px rgba(0,0,0,.12)";
+        header.style.background = "rgba(255,255,255,.97)";
 
     }else{
 
-        header.style.boxShadow="0 3px 15px rgba(0,0,0,.05)";
-        header.style.background="rgba(255,255,255,.92)";
+        header.style.boxShadow = "0 3px 15px rgba(0,0,0,.05)";
+        header.style.background = "rgba(255,255,255,.92)";
 
     }
+
+    if(currentScroll > lastScroll && currentScroll > 100){
+
+        header.classList.add("hide");
+
+    }else{
+
+        header.classList.remove("hide");
+
+    }
+
+    lastScroll = currentScroll;
 
 });
 
 // ==============================
-// Fade Animation
+// FADE ANIMATION
 // ==============================
 
 const observer = new IntersectionObserver(entries=>{
@@ -100,54 +130,57 @@ document.querySelectorAll(".card,.category-card,.contact-card,h2,p").forEach(el=
 });
 
 // ==============================
-// Scroll To Top
+// SCROLL TO TOP
 // ==============================
 
-const topBtn=document.getElementById("topBtn");
+const topBtn = document.getElementById("topBtn");
 
 window.addEventListener("scroll",()=>{
 
-    if(window.scrollY>500){
+    if(window.scrollY > 500){
 
-        topBtn.style.display="flex";
+        topBtn.style.display = "flex";
 
     }else{
 
-        topBtn.style.display="none";
+        topBtn.style.display = "none";
 
     }
 
 });
 
-topBtn.onclick=()=>{
+if(topBtn){
 
-    window.scrollTo({
+    topBtn.onclick = ()=>{
 
-        top:0,
+        window.scrollTo({
 
-        behavior:"smooth"
+            top:0,
+            behavior:"smooth"
 
-    });
+        });
 
-};
-
-// ==============================
-// Footer Year
-// ==============================
-
-const year=document.querySelector(".year");
-
-if(year){
-
-    year.textContent=new Date().getFullYear();
+    };
 
 }
 
 // ==============================
-// WhatsApp Animation
+// FOOTER YEAR
 // ==============================
 
-const whatsapp=document.querySelector(".whatsapp");
+const year = document.querySelector(".year");
+
+if(year){
+
+    year.textContent = new Date().getFullYear();
+
+}
+
+// ==============================
+// WHATSAPP ANIMATION
+// ==============================
+
+const whatsapp = document.querySelector(".whatsapp");
 
 if(whatsapp){
 
@@ -170,34 +203,34 @@ if(whatsapp){
 }
 
 // ==============================
-// Image Viewer
+// IMAGE VIEWER
 // ==============================
 
 function openImage(src){
 
-    const viewer=document.getElementById("imageViewer");
-    const image=document.getElementById("largeImage");
-    const download=document.getElementById("downloadImage");
+    const viewer = document.getElementById("imageViewer");
+    const image = document.getElementById("largeImage");
+    const download = document.getElementById("downloadImage");
 
-    viewer.style.display="flex";
+    viewer.style.display = "flex";
 
-    image.src=src;
+    image.src = src;
 
-    download.href=src;
+    download.href = src;
 
-    download.download=src.split("/").pop();
+    download.download = src.split("/").pop();
 
 }
 
 function closeImage(){
 
-    document.getElementById("imageViewer").style.display="none";
+    document.getElementById("imageViewer").style.display = "none";
 
 }
 
-document.getElementById("imageViewer")?.addEventListener("click",function(e){
+document.getElementById("imageViewer")?.addEventListener("click", function(e){
 
-    if(e.target.id==="imageViewer"){
+    if(e.target.id === "imageViewer"){
 
         closeImage();
 
