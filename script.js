@@ -1,5 +1,5 @@
 // ==============================
-// Hunar By Hina v6.0
+// Hunar By Hina v7.0
 // ==============================
 
 // ==============================
@@ -11,7 +11,10 @@ const navbar = document.getElementById("navbar");
 
 if (menuToggle && navbar) {
 
-    menuToggle.addEventListener("click", () => {
+    // Toggle menu
+    menuToggle.addEventListener("click", (e) => {
+
+        e.stopPropagation();
 
         navbar.classList.toggle("active");
 
@@ -22,6 +25,7 @@ if (menuToggle && navbar) {
 
     });
 
+    // Close when a menu link is clicked
     document.querySelectorAll("#navbar a").forEach(link => {
 
         link.addEventListener("click", () => {
@@ -34,6 +38,27 @@ if (menuToggle && navbar) {
             icon.classList.add("fa-bars");
 
         });
+
+    });
+
+    // Prevent clicks inside menu from closing it
+    navbar.addEventListener("click", (e) => {
+        e.stopPropagation();
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", () => {
+
+        if (navbar.classList.contains("active")) {
+
+            navbar.classList.remove("active");
+
+            const icon = menuToggle.querySelector("i");
+
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+
+        }
 
     });
 
