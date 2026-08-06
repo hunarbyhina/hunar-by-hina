@@ -1367,33 +1367,49 @@ SCROLL BUTTON
     width: 58px;
     height: 58px;
 
+    display: none;
+    justify-content: center;
+    align-items: center;
+
     border: none;
     border-radius: 50%;
 
     background: #b88645;
-    color: white;
-
-    font-size: 30px;
-    font-weight: bold;
-
-    display: none;
-
-    justify-content: center;
-    align-items: center;
+    color: #fff;
 
     cursor: pointer;
 
     box-shadow: 0 8px 20px rgba(0,0,0,.25);
-
     transition: all .3s ease;
 
     z-index: 999;
+
+    font-size: 0; /* Hide any text arrow */
+}
+
+#topBtn i{
+    font-size: 24px;
+    color: white;
+    line-height: 1;
 }
 
 #topBtn:hover{
     background:#9d7238;
     transform:translateY(-6px) scale(1.08);
     box-shadow:0 12px 28px rgba(0,0,0,.35);
+}
+
+@media (max-width:768px){
+    #topBtn{
+        width:54px;
+        height:54px;
+        right:18px;
+        bottom:90px;
+    }
+
+    #topBtn i{
+        font-size:22px;
+    }
 }
 
 
