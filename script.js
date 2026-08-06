@@ -1,9 +1,35 @@
 // ==============================
-// Hunar By Hina v3.0
+// Hunar By Hina v4.0
 // ==============================
 
+// ==============================
+// MOBILE MENU
+// ==============================
+
+const menuToggle = document.getElementById("menuToggle");
+const navbar = document.getElementById("navbar");
+
+if (menuToggle && navbar) {
+
+    menuToggle.addEventListener("click", () => {
+        navbar.classList.toggle("active");
+    });
+
+    document.querySelectorAll("#navbar a").forEach(link => {
+
+        link.addEventListener("click", () => {
+            navbar.classList.remove("active");
+        });
+
+    });
+
+}
+
+// ==============================
 // Smooth Scrolling
-document.querySelectorAll("nav a").forEach(link => {
+// ==============================
+
+document.querySelectorAll("#navbar a").forEach(link => {
 
     link.addEventListener("click", function(e){
 
@@ -38,8 +64,8 @@ window.addEventListener("scroll",()=>{
 
     }else{
 
-        header.style.boxShadow="none";
-        header.style.background="rgba(255,255,255,.95)";
+        header.style.boxShadow="0 3px 15px rgba(0,0,0,.05)";
+        header.style.background="rgba(255,255,255,.92)";
 
     }
 
@@ -65,9 +91,7 @@ const observer = new IntersectionObserver(entries=>{
     threshold:0.15
 });
 
-document.querySelectorAll(
-".card,.category-card,.contact-card,h2,p"
-).forEach(el=>{
+document.querySelectorAll(".card,.category-card,.contact-card,h2,p").forEach(el=>{
 
     el.classList.add("fade");
 
@@ -79,7 +103,7 @@ document.querySelectorAll(
 // Scroll To Top
 // ==============================
 
-const topBtn = document.getElementById("topBtn");
+const topBtn=document.getElementById("topBtn");
 
 window.addEventListener("scroll",()=>{
 
@@ -120,7 +144,7 @@ if(year){
 }
 
 // ==============================
-// WhatsApp Floating Animation
+// WhatsApp Animation
 // ==============================
 
 const whatsapp=document.querySelector(".whatsapp");
@@ -130,59 +154,46 @@ if(whatsapp){
     setInterval(()=>{
 
         whatsapp.animate([
+
             {transform:"scale(1)"},
             {transform:"scale(1.12)"},
             {transform:"scale(1)"}
+
         ],{
+
             duration:600
+
         });
 
     },3500);
 
 }
-// ==============================
-// Image Viewer + Download
-// ==============================
 
+// ==============================
+// Image Viewer
+// ==============================
 
 function openImage(src){
 
-    const viewer = document.getElementById("imageViewer");
-
-    const image = document.getElementById("largeImage");
-
-    const download = document.getElementById("downloadImage");
-
+    const viewer=document.getElementById("imageViewer");
+    const image=document.getElementById("largeImage");
+    const download=document.getElementById("downloadImage");
 
     viewer.style.display="flex";
 
+    image.src=src;
 
-    image.src = src;
+    download.href=src;
 
-
-    download.href = src;
-
-
-    // Set download file name
-
-    let fileName = src.split("/").pop();
-
-    download.download = fileName;
-
+    download.download=src.split("/").pop();
 
 }
-
-
 
 function closeImage(){
 
     document.getElementById("imageViewer").style.display="none";
 
 }
-
-
-
-// Close image viewer when clicking outside image
 
 document.getElementById("imageViewer")?.addEventListener("click",function(e){
 
