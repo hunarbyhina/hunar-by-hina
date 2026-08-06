@@ -261,6 +261,66 @@ nav a:hover::after{
 
 }
 
+/* ===========================
+MOBILE HAMBURGER MENU
+=========================== */
+
+.menu-toggle{
+    display:none;
+    font-size:30px;
+    color:#b88645;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.menu-toggle:hover{
+    color:#9d7238;
+}
+
+@media (max-width:900px){
+
+    header{
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:center;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    nav{
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        background:rgba(255,255,255,.97);
+        backdrop-filter:blur(12px);
+
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+
+        max-height:0;
+        overflow:hidden;
+
+        transition:.35s ease;
+
+        box-shadow:0 10px 25px rgba(0,0,0,.08);
+    }
+
+    nav.active{
+        max-height:500px;
+    }
+
+    nav a{
+        width:100%;
+        padding:18px;
+        text-align:center;
+        border-bottom:1px solid #eee;
+    }
+
+}
 
 
 
