@@ -133,7 +133,6 @@ HEADER
 
 header{
 
-
     position:fixed;
 
     top:0;
@@ -142,31 +141,30 @@ header{
 
     width:100%;
 
-
     display:flex;
 
     justify-content:space-between;
 
     align-items:center;
 
-
     padding:20px 8%;
-
 
     background:rgba(255,255,255,.92);
 
     backdrop-filter:blur(12px);
 
-
     box-shadow:0 3px 15px rgba(0,0,0,.05);
-
 
     z-index:1000;
 
+    transition:transform .35s ease,
+               background .35s ease,
+               box-shadow .35s ease;
+}
 
-    transition:.35s;
-
-
+/* Hide header while scrolling down */
+header.hide{
+    transform:translateY(-100%);
 }
 
 
