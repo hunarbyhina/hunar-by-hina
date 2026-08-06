@@ -1571,202 +1571,111 @@ IMAGE VIEWER
 MOBILE RESPONSIVE
 =========================== */
 
+@media (max-width: 900px) {
 
-@media(max-width:768px){
+    header{
+        padding:15px 5%;
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:center;
+    }
 
+    .logo{
+        font-size:24px;
+    }
 
-header{
-    flex-direction:row;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 5%;
+    .menu-toggle{
+        display:block;
+        font-size:30px;
+        cursor:pointer;
+        color:#b88645;
+        z-index:1002;
+    }
+
+    nav{
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        background:#fff;
+
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+
+        max-height:0;
+        overflow:hidden;
+
+        transition:max-height .35s ease;
+        box-shadow:0 10px 20px rgba(0,0,0,.08);
+    }
+
+    nav.active{
+        max-height:500px;
+    }
+
+    nav a{
+        width:100%;
+        padding:18px;
+        text-align:center;
+        border-bottom:1px solid #eee;
+    }
+
+    .hero-content h1{
+        font-size:42px;
+    }
+
+    .hero-content p{
+        font-size:16px;
+    }
+
+    section{
+        padding:70px 5%;
+    }
+
+    h2{
+        font-size:34px;
+    }
+
+    .cards,
+    .categories,
+    .contact-box{
+        grid-template-columns:1fr;
+    }
+
+    .category-card{
+        height:300px;
+    }
+
+    .product-section .card img{
+        height:260px;
+    }
 }
 
-
-.logo{
-
-
-    font-size:24px;
-
-
-}
-
-
-
-nav{
-
-
-    flex-wrap:wrap;
-
-
-    justify-content:center;
-
-
-    gap:18px;
-
-
-}
-
-
-
-.hero-content h1{
-
-
-    font-size:42px;
-
-
-}
-
-
-
-.hero-content p{
-
-
-    font-size:16px;
-
-
-}
-
-
-
-section{
-
-
-    padding:70px 5%;
-
-
-}
-
-
-
-h2{
-
-
-    font-size:34px;
-
-
-}
-
-
-
-.cards{
-
-
-    grid-template-columns:1fr;
-
-
-}
-
-
-
-.categories{
-
-
-    grid-template-columns:1fr;
-
-
-}
-
-
-
-.contact-box{
-
-
-    grid-template-columns:1fr;
-
-
-}
-
-
-
-.category-card{
-
-
-    height:300px;
-
-
-}
-
-
-
-.product-section .card img{
-
-
-    height:260px;
-
-
-}
-
-
-}
-
-
-
-
-
-@media(max-width:480px){
-
-
-.hero-content h1{
-
-
-    font-size:34px;
-
-
-}
-
-
-
-.hero-content p{
-
-
-    font-size:15px;
-
-
-}
-
-
-
-h2{
-
-
-    font-size:30px;
-
-
-}
-
-
-
-.logo{
-
-
-    font-size:22px;
-
-
-}
-
-
-
-.section-text{
-
-
-    font-size:15px;
-
-
-}
-
-
-
-#largeImage{
-
-
-    max-width:95%;
-
-
-    max-height:70%;
-
-
-}
-
-
+@media (max-width:480px){
+
+    .hero-content h1{
+        font-size:34px;
+    }
+
+    .hero-content p{
+        font-size:15px;
+    }
+
+    h2{
+        font-size:30px;
+    }
+
+    .logo{
+        font-size:22px;
+    }
+
+    .section-text{
+        font-size:15px;
+    }
+
+    #largeImage{
+        max-width:95%;
+        max-height:70%;
+    }
 }
